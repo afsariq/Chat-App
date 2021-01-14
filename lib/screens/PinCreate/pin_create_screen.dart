@@ -50,15 +50,12 @@ class CreatePinScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(children: [
                 Expanded(
-                  child: Row(children: [
-                    Text("Fingerprint or pin active for unlock",
-                        style: TextStyle(
-                          color: Colors.white,
-                        )),
-                  ]),
-                ),
-                SizedBox(
-                  width: 10,
+                  child: Text(
+                    "Fingerprint or pin active for unlock",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
                 SizedBox(
                   //width: 50,
