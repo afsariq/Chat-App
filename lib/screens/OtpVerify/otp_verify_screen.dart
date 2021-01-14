@@ -25,6 +25,7 @@ class OtpVerifyScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(40.0),
               child: PinCodeTextField(
+                backgroundColor: Colors.transparent,
                 appContext: context,
                 length: 4,
                 onChanged: (value) {
