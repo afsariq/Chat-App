@@ -5,13 +5,17 @@ import 'package:url_launcher/url_launcher.dart';
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final double textScaleFactor = MediaQuery.of(context).textScaleFactor;
+
     return Scaffold(
         backgroundColor: Colors.blue[900],
         body: Container(
           decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("Assets/Images/log.jpg"),
-                  fit: BoxFit.cover)),
+            image: DecorationImage(
+              image: AssetImage("Assets/Images/log.jpg"),
+              fit: BoxFit.fill,
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
 
@@ -23,7 +27,7 @@ class WelcomeScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Exo2',
-                  fontSize: 38,
+                  fontSize: textScaleFactor * 25,
                   //fontWeight:FontWeight.bold,
                   color: Colors.blue[900],
                 ),
@@ -33,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                 "Be Yourself in every message",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 35,
+                  fontSize: textScaleFactor * 32,
                   color: Colors.blue[900],
                 ),
               ),
