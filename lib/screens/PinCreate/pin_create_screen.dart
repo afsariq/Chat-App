@@ -1,4 +1,4 @@
-import 'package:chat_App/Pin_create/Confirm_pin.dart';
+import 'package:chat_App/screens/ConfirmPin/confirm_pin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 

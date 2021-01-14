@@ -1,4 +1,4 @@
-import 'package:chat_App/Home/home_screen.dart';
+import 'package:chat_App/screens/Home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class ConfirmPinScreen extends StatelessWidget {

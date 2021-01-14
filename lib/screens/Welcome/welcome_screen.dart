@@ -1,4 +1,4 @@
-import 'package:chat_App/Phone_number/get_number.dart';
+import 'package:chat_App/screens/GetNumber/get_number_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

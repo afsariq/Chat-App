@@ -1,4 +1,4 @@
-import 'package:chat_App/Phone_number/otp_verify.dart';
+import 'package:chat_App/screens/OtpVerify/otp_verify_screen.dart';
 import 'package:flutter/material.dart';
 
 class GetPhoneNumberScreen extends StatelessWidget {

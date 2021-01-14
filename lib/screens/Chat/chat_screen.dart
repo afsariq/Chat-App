@@ -1,5 +1,5 @@
-import 'package:chat_App/Chat_screen/pop_up.dart';
-import 'package:chat_App/Home/home_screen.dart';
+import 'package:chat_App/screens/Chat/pop_up.dart';
+import 'package:chat_App/screens/Home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {

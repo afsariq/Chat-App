@@ -1,4 +1,4 @@
-import 'package:chat_App/profile_setup/profile_setup_screen.dart';
+import 'package:chat_App/screens/ProfileSetup/profile_setup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 

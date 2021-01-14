@@ -1,5 +1,5 @@
-import 'package:chat_App/Chat_screen/chat_screen.dart';
-import 'package:chat_App/Contacts/contact_profile.dart';
+import 'package:chat_App/screens/Chat/chat_screen.dart';
+import 'package:chat_App/screens/ContactProfile/contact_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
