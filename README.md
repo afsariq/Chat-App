@@ -1,16 +1,14 @@
-# chat_App
+# ChatApp
 
-A new Flutter project.
+## An outstanding chat app with Sri Lankan inspiration
 
-## Getting Started
+### Beloved Developers ❤
 
-This project is a starting point for a Flutter application.
+- Mr. Mohamed Afsar
+- Ms. D.W.H.W.D.T. Hettiarachchi
+- Mr. Sandun Pushpika
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+\
+\
+Created and maintained by `Shield Technologies`  
+**All rights are reserved by Shield Technology**

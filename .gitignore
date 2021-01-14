@@ -39,3 +39,6 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+# vs code setting and launch details are not needed for a flutter project
+.vscode
