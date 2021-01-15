@@ -1,8 +1,31 @@
 import 'package:chat_App/screens/ProfileSetup/profile_setup_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class OtpVerifyScreen extends StatelessWidget {
+  TextEditingController codeController=new TextEditingController();
+  String verificationId;
+  FirebaseAuth _auth=FirebaseAuth.instance;
+
+  OtpVerifyScreen({this.verificationId}){}
+
+  //This is for signing in the code
+  Future<void> signIn(BuildContext context) async{
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationId, smsCode: codeController.text);
+
+    await _auth.signInWithCredential(credential).then((userCredential) {
+      if(userCredential.user != null){
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ProfileSetupScreen()));
+      }
+    });
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +38,7 @@ class OtpVerifyScreen extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: 120),
             Text(
-              "Enter the code we sent to 0771234567",
+              "Enter the code we sent",
               style: TextStyle(fontSize: 25, color: Colors.white),
               textAlign: TextAlign.center,
             ),
@@ -27,15 +50,16 @@ class OtpVerifyScreen extends StatelessWidget {
               child: PinCodeTextField(
                 backgroundColor: Colors.transparent,
                 appContext: context,
-                length: 4,
+                length: 6,
+                controller: codeController,
                 onChanged: (value) {
                   print(value);
                 },
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
                   borderRadius: BorderRadius.circular(20),
-                  fieldHeight: 50,
-                  fieldWidth: 50,
+                  fieldHeight: 40,
+                  fieldWidth: 40,
                   inactiveColor: Colors.black,
                   activeColor: Colors.black,
                   selectedColor: Colors.black,
@@ -50,10 +74,12 @@ class OtpVerifyScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ProfileSetupScreen()));
+                  signIn(context); //to sign in
+
+                  //Navigator.pushReplacement(
+                    //  context,
+                      //MaterialPageRoute(
+                        //  builder: (context) => ProfileSetupScreen()));
                 },
                 child: Text(
                   "Next",

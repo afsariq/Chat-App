@@ -1,7 +1,11 @@
+import 'package:chat_App/Services/OTPService.dart';
 import 'package:chat_App/screens/OtpVerify/otp_verify_screen.dart';
 import 'package:flutter/material.dart';
 
 class GetPhoneNumberScreen extends StatelessWidget {
+  TextEditingController _NumberController=TextEditingController();
+  TextEditingController _CodeController=new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +39,7 @@ class GetPhoneNumberScreen extends StatelessWidget {
                       width: 70,
                       child: TextFormField(
                           enabled: false,
+                          controller: _CodeController,
                           decoration: InputDecoration(
                             hintText: '+94',
                             border: OutlineInputBorder(
@@ -49,6 +54,7 @@ class GetPhoneNumberScreen extends StatelessWidget {
                     SizedBox(
                       width: 250,
                       child: TextFormField(
+                          controller: _NumberController,
                           decoration: InputDecoration(
                               filled: true,
                               fillColor: Colors.white,
@@ -65,10 +71,14 @@ class GetPhoneNumberScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => OtpVerifyScreen()));
+
+                      OTPService(_NumberController.text).VerifyPhone(context);
+
+
+                      //Navigator.pushReplacement(
+                         // context,
+                          //MaterialPageRoute(
+                            //  builder: (context) => OtpVerifyScreen()));
                     },
                     child: Text(
                       "Next",
