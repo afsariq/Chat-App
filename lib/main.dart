@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
   runApp(MyApp());
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -16,11 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: Firebase.initializeApp(),
-      builder: (context, snapshot){
-        return MaterialApp(
-        debugShowCheckedModeBanner: false, home: WelcomeScreen());
-      }
-      );
+        future: Firebase.initializeApp(),
+        builder: (context, snapshot) {
+          return MaterialApp(
+              debugShowCheckedModeBanner: false, home: WelcomeScreen());
+        });
   }
 }
