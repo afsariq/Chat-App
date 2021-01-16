@@ -1,10 +1,9 @@
 import 'package:chat_App/Services/OTPService.dart';
-import 'package:chat_App/screens/OtpVerify/otp_verify_screen.dart';
 import 'package:flutter/material.dart';
 
 class GetPhoneNumberScreen extends StatelessWidget {
-  TextEditingController _NumberController=TextEditingController();
-  TextEditingController _CodeController=new TextEditingController();
+  final TextEditingController _numberController = TextEditingController();
+  final TextEditingController _codeController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class GetPhoneNumberScreen extends StatelessWidget {
                       width: 70,
                       child: TextFormField(
                           enabled: false,
-                          controller: _CodeController,
+                          controller: _codeController,
                           decoration: InputDecoration(
                             hintText: '+94',
                             border: OutlineInputBorder(
@@ -54,7 +53,7 @@ class GetPhoneNumberScreen extends StatelessWidget {
                     SizedBox(
                       width: 250,
                       child: TextFormField(
-                          controller: _NumberController,
+                          controller: _numberController,
                           decoration: InputDecoration(
                               filled: true,
                               fillColor: Colors.white,
@@ -71,14 +70,12 @@ class GetPhoneNumberScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     onPressed: () {
-
-                      OTPService(_NumberController.text).VerifyPhone(context);
-
+                      OTPService(_numberController.text).verifyPhone(context);
 
                       //Navigator.pushReplacement(
-                         // context,
-                          //MaterialPageRoute(
-                            //  builder: (context) => OtpVerifyScreen()));
+                      // context,
+                      //MaterialPageRoute(
+                      //  builder: (context) => OtpVerifyScreen()));
                     },
                     child: Text(
                       "Next",

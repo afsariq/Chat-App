@@ -4,27 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class OtpVerifyScreen extends StatelessWidget {
-  TextEditingController codeController=new TextEditingController();
-  String verificationId;
-  FirebaseAuth _auth=FirebaseAuth.instance;
+  final TextEditingController codeController = new TextEditingController();
+  final String verificationId;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  OtpVerifyScreen({this.verificationId}){}
+  OtpVerifyScreen({this.verificationId});
 
   //This is for signing in the code
-  Future<void> signIn(BuildContext context) async{
-    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationId, smsCode: codeController.text);
+  Future<void> signIn(BuildContext context) async {
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationId, smsCode: codeController.text);
 
     await _auth.signInWithCredential(credential).then((userCredential) {
-      if(userCredential.user != null){
-        Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ProfileSetupScreen()));
+      if (userCredential.user != null) {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => ProfileSetupScreen()));
       }
     });
-
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +74,9 @@ class OtpVerifyScreen extends StatelessWidget {
                   signIn(context); //to sign in
 
                   //Navigator.pushReplacement(
-                    //  context,
-                      //MaterialPageRoute(
-                        //  builder: (context) => ProfileSetupScreen()));
+                  //  context,
+                  //MaterialPageRoute(
+                  //  builder: (context) => ProfileSetupScreen()));
                 },
                 child: Text(
                   "Next",
