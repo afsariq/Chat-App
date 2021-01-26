@@ -70,7 +70,13 @@ class GetPhoneNumberScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     onPressed: () {
-                      OTPService(_numberController.text).verifyPhone(context);
+                      String text="";
+                      if(_numberController.text.startsWith("0")){
+                        text=_numberController.text.substring(1);
+                      }else{
+                        text=_numberController.text;
+                      }
+                      OTPService("+94"+text).verifyPhone(context);
 
                       //Navigator.pushReplacement(
                       // context,
